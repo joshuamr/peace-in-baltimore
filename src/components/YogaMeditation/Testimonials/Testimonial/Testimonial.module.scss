@@ -1,0 +1,68 @@
+@import "../../../../sass/variables";
+@import "../../../../sass/animations";
+
+.testimonial {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-align: center;
+	align-items: center;
+	position: absolute;
+	width: 90%;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: 10;
+
+	padding: 3rem 0;
+	// border-radius: 50%;
+	border: 1px solid $color-orange;
+	background-color: rgba(255, 255, 255, 0.4);
+	box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.8);
+
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	text-align: center;
+	// -webkit-transform: skew(-12deg) translateY(0);
+	//         transform: skew(-12deg) translateY(0);
+	& > * {
+		// -webkit-transform: skew(12deg);
+		// transform: skew(12deg);
+	}
+	// width: 85%;
+	margin: 0 auto;
+
+	&:hover {
+		// -webkit-transform: skew(-12deg) translateY(-0.5rem);
+		//         transform: skew(-12deg) translateY(-0.5rem);
+	}
+
+	&__image {
+		width: 10rem;
+		height: 10rem;
+		border-radius: 50%;
+		-o-object-fit: cover;
+		object-fit: cover;
+		// margin-right: 3rem;
+		-webkit-box-flex: 0;
+		flex: 0 0 10rem;
+		border: 1px solid black;
+		box-shadow: 0 0.2rem 0.5rem rgba($color: #000000, $alpha: 0.9);
+	}
+	&__quote {
+		color: $color-blue;
+		font-weight: bold;
+	}
+	&__text {
+		font-size: 2.8rem;
+		margin: 2rem auto 1rem;
+		font-style: italic;
+	}
+	&__student {
+		text-transform: uppercase;
+		font-size: 1.8rem;
+	}
+}

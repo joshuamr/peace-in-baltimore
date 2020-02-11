@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.scss";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import YogaMeditation from "./containers/YogaMeditation/YogaMeditation";
+import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [drawerOpen, setDrawerOpen] = useState(false);
+	const drawerClicked = () => {
+		setDrawerOpen(!drawerOpen);
+	};
+	document.body.classList.toggle("no__scroll", drawerOpen);
+	return (
+		<BrowserRouter>
+			<Nav drawerOpen={drawerOpen} drawerClicked={drawerClicked}></Nav>
+			<Route path="/" component={YogaMeditation} />
+			<Footer></Footer>
+		</BrowserRouter>
+	);
 }
 
 export default App;

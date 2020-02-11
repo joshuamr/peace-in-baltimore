@@ -1,0 +1,156 @@
+@import "../../sass/variables";
+@import "../../sass/animations";
+
+%line {
+	width: 3rem;
+	height: 0.2rem;
+	background-color: white;
+}
+
+%navbox {
+	height: 2.598rem;
+	width: 3rem;
+}
+
+.nav {
+	width: 100%;
+	z-index: 10;
+	background-color: $color-blue;
+	height: 5rem;
+	display: grid;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 0 1.5rem;
+	justify-items: end;
+
+	&__checkbox {
+		display: none;
+	}
+	&__checkbox:checked + &__label > &__box {
+		&:hover + * {
+			opacity: 0;
+		}
+		&:hover > * {
+			-webkit-transform: none;
+			transform: none;
+			background-color: $color-light;
+
+			&::before,
+			&::after {
+				background-color: $color-light;
+				top: 0;
+			}
+
+			&::before {
+				-webkit-transform: rotate(60deg);
+				transform: rotate(60deg);
+			}
+
+			&::after {
+				-webkit-transform: rotate(-60deg);
+				transform: rotate(-60deg);
+			}
+		}
+	}
+
+	&__checkbox:checked + &__label > &__box > &__line {
+		-webkit-transform: translateY(-0.1rem);
+		        transform: translateY(-0.1rem);
+		&::before,
+		&::after {
+			top: 0;
+		}
+		&::before {
+			-webkit-transform: rotate(60deg);
+			transform: rotate(60deg);
+			left: 0;
+		}
+		&::after {
+			-webkit-transform: rotate(-60deg);
+			transform: rotate(-60deg);
+			left: 0;
+		}
+	}
+
+	&__triangle {
+		position: absolute;
+		right: 1.5rem;
+		top: 1.2rem;
+		background-color: $color-light;
+		@extend %navbox;
+		z-index: 11;
+		-webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+		clip-path: polygon(0 0, 100% 0, 50% 100%);
+		opacity: 0;
+		z-index: 11;
+	}
+
+	&__box {
+		@extend %navbox;
+		position: relative;
+		cursor: pointer;
+		z-index: 12;
+
+		&:hover > * {
+			-webkit-transform: translateY(-1.3rem);
+			transform: translateY(-1.3rem);
+			background-color: $color-light;
+
+			&::before,
+			&::after {
+				top: 1.2rem;
+				background-color: $color-light;
+			}
+			&::before {
+				-webkit-transform: rotate(60deg);
+				transform: rotate(60deg);
+				left: -0.75rem;
+			}
+			&::after {
+				-webkit-transform: rotate(-60deg);
+				transform: rotate(-60deg);
+				left: 0.75rem;
+			}
+		}
+		&:hover + * {
+			opacity: 1;
+			-webkit-transition: opacity 0.4s;
+			-webkit-transition: opacity 0.4s 0.4s;
+			transition: opacity 0.4s;
+		}
+
+		&:active {
+			-webkit-transform: translateY(2px);
+			transform: translateY(2px);
+		}
+	}
+
+	&__line {
+		@extend %line;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		-webkit-transform: translateY(-0.1rem);
+		transform: translateY(-0.1rem);
+		-webkit-transition: all 0.4s;
+		transition: all 0.4s;
+		z-index: 13;
+
+		&::before,
+		&::after {
+			content: "";
+			@extend %line;
+			position: absolute;
+			-webkit-transition: all 0.4s;
+			transition: all 0.4s;
+		}
+
+		&::before {
+			top: -1rem;
+		}
+
+		&::after {
+			top: 1rem;
+		}
+	}
+}

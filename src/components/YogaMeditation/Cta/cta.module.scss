@@ -1,0 +1,70 @@
+@import "../../../sass/variables";
+@import "../../../sass/animations";
+
+%input {
+	font-family: $font-display;
+	height: 4rem;
+	width: 90%;
+	padding: 0.5rem 1rem;
+	margin: 1rem 0;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.5);
+}
+
+.cta {
+	background-image: -webkit-gradient(
+			linear,
+			left top, right bottom,
+			from(rgba($color-light, 0.8)),
+			to(rgba($color-light, 0.8))
+		),
+		url("../../../assets/images/beach-meditation-600.jpg");
+	background-image: linear-gradient(
+			to right bottom,
+			rgba($color-light, 0.8),
+			rgba($color-light, 0.8)
+		),
+		url("../../../assets/images/beach-meditation-600.jpg");
+	background-size: cover;
+	// background-color: $color-light;
+	margin: 4rem auto;
+
+	@extend %clip-path-bottom-pointdown;
+
+	&__learn_more {
+		padding: 3rem 3rem calc(100% - 100vh * 0.225 + 3rem);
+	}
+
+	&__title {
+		color: white;
+		font-size: 2.8rem;
+		margin-bottom: 1rem;
+		&__large {
+			font-size: 4.5rem;
+		}
+	}
+
+	&__name {
+		@extend %input;
+	}
+
+	&__email {
+		@extend %input;
+		&:placeholder-shown + &__label {
+			opacity: 0;
+		}
+	}
+
+	&__btn {
+		margin: 1.5rem 0 5rem;
+	}
+
+	&__register {
+		display: grid;
+		justify-items: center;
+	}
+
+	&__contact {
+	}
+}

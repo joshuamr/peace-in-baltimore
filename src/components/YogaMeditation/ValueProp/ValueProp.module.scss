@@ -1,0 +1,86 @@
+@import "../../../sass/variables";
+@import "../../../sass/animations";
+
+.valuePropBorder {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 10px,
+		50% calc(100vh * 0.225 + 10px),
+		0 10px
+	);
+	clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 10px,
+		50% calc(100vh * 0.225 + 10px),
+		0 10px
+	);
+	margin-top: calc(-1 * 100vh * 0.225);
+	background-color: white;
+	width: 100%;
+	height: calc(100vh * 0.225 + 10px);
+}
+
+.valueProp {
+	background-color: $color-blue;
+	color: $color-light;
+	font-size: 2.2rem;
+	text-align: center;
+	margin-top: calc(-1 * 100vh * 0.225);
+	padding: calc(100vh * 0.225 + 3rem) 4rem calc(100vh * 0.225 - 3rem);
+	@extend %clip-path-pointdown;
+
+	&__when {
+		margin-bottom: 1rem;
+	}
+
+	&__where {
+		padding: 0 10%;
+	}
+	&__link {
+		&:visited,
+		&:link {
+			cursor: pointer;
+			text-decoration: none;
+			color: $color-orange;
+		}
+		&:hover,
+		&:active {
+			color: $color-orange-light;
+		}
+	}
+}
+
+.tagLine {
+	font-style: italic;
+	display: block;
+	margin-top: 2rem;
+	font-size: 4.5rem;
+}
+
+.lotus {
+	margin: 2rem auto;
+	height: 8rem;
+	width: 14rem;
+
+	//older browsers
+	background-image: url(../../../assets/images/LotusFlower329.svg);
+	background-size: cover;
+	-webkit-filter: invert(1);
+	filter: invert(1);
+
+	@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+		background-color: $color-orange;
+		-webkit-mask-image: url(../../../assets/images/LotusFlower329.svg);
+
+		mask-image: url(../../../assets/images/LotusFlower329.svg);
+		-webkit-mask-size: cover;
+		mask-size: cover;
+		background-image: none;
+		-webkit-filter: none;
+		filter: none;
+	}
+}

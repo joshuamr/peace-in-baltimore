@@ -1,0 +1,19 @@
+@import "../../../../sass/variables";
+@import "../../../../sass/animations";
+
+.lotuses {
+	height: 5rem;
+	background-color: $color-blue;
+	width: 100%;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: space-evenly;
+	justify-content: space-evenly;
+
+	&__icon {
+		height: 3.6rem;
+		width: 5.5rem;
+	}
+}

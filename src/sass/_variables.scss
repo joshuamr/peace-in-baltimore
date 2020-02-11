@@ -1,0 +1,87 @@
+$color-orange-light: #f88745;
+$color-orange: rgb(203, 126, 75);
+$color-orange-dark: #7f2806;
+$color-blue-light: #4982c3;
+$color-blue: #29507d;
+$color-dark: #182f4a;
+$color-blue-dark: #294e56;
+$color-light: #eb5;
+//cb6
+//ea4
+$apex-distance: calc(100vh * 0.225);
+
+$bp-phone: 37.5em;
+
+$font-display: "Josefin Slab", serif;
+$font-title: "Philosopher", sans-serif;
+
+$section-height: 90vh;
+
+%clip-path-pointdown {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+	clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+}
+
+%clip-path-top-pointup {
+	-webkit-clip-path: polygon(
+		0 calc(100vh * 0.225),
+		50% 0,
+		100% calc(100vh * 0.225),
+		100% 100%,
+		0 100%
+	);
+	clip-path: polygon(
+		0 calc(100vh * 0.225),
+		50% 0,
+		100% calc(100vh * 0.225),
+		100% 100%,
+		0 100%
+	);
+}
+
+%clip-path-bottom-pointdown {
+	-webkit-clip-path: polygon(
+		0 0,
+		0 100%,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+}
+
+%clip-path-top-pointdown {
+	-webkit-clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
+	        clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
+}
+
+%clip-path-hex {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 100%,
+		0 100%
+	);
+	clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
+}

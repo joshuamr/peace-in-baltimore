@@ -1,0 +1,36 @@
+@import "../../../sass/variables";
+@import "../../../sass/animations";
+
+.testimonials {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(white, 0.8)), to(rgba(white, 0.8))),
+		url("../../../assets/images/sunset-640.jpg");
+	background-image: linear-gradient(rgba(white, 0.8), rgba(white, 0.8)),
+		url("../../../assets/images/sunset-640.jpg");
+	background-size: cover;
+	background-position: 35% 0;
+	height: 45vh;
+	display: grid;
+	-webkit-box-align: center;
+	align-items: center;
+	position: absolute;
+	overflow: hidden;
+	width: 100%; //90%;
+	top: 0;
+	left: 0; //5%;
+	// border-radius: 3px;
+	// box-shadow: 0 1rem 1.3rem rgba($color: #000000, $alpha: 0.8);
+}
+
+.animateEntrance {
+	-webkit-animation: moveInLeftToCenter 2s;
+	animation: moveInLeftToCenter 2s;
+}
+
+.animateExit {
+	-webkit-animation: moveOutRightFromCenter 2s;
+	animation: moveOutRightFromCenter 2s;
+}
+
+.hide {
+	opacity: 0;
+}

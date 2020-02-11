@@ -1,0 +1,31 @@
+@import "../../../sass/variables";
+@import "../../../sass/animations";
+
+.drawer {
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: 9;
+	-webkit-transition: all 0.4s;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+
+	background-image: radial-gradient(
+		rgba($color-blue-light, 1),
+		rgba($color-blue, 1)
+	);
+	display: grid;
+	-webkit-box-align: center;
+	        align-items: center;
+}
+
+.closed {
+	top: -100%;
+	opacity: 0;
+}
+
+.open {
+	top: 0;
+	opacity: 1;
+}
