@@ -7,10 +7,7 @@
 
 %feature-box {
 	width: 80%;
-	border: 1px solid $color-orange;
-	box-shadow: 0 3px 1rem rgba(#000, 0.8);
-	padding: 2rem 4rem 4rem;
-	border-radius: 3px;
+	border-radius: 5px;
 	color: $color-blue;
 	text-align: center;
 	z-index: 10;
@@ -19,4 +16,14 @@
 	@media only screen and(min-width: $tab-port) {
 		margin: 5rem 3rem;
 	}
+}
+
+%short-box-shadow {
+	box-shadow: 0 0.5rem 1rem rgba(#000, 0.8);
+}
+
+%feature-box-outline {
+	padding: 2rem 4rem 4rem;
+	border: 1px solid $color-light;
+	@extend %short-box-shadow;
 }
