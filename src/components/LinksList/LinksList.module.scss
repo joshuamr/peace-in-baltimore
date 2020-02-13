@@ -5,8 +5,33 @@
 	&__list {
 		display: grid;
 		justify-items: center;
-		font-size: 2.3rem;
 		grid-row-gap: 3rem;
+	}
+
+	&__footer {
+		@media only screen and(min-width: $phone) {
+			grid-template-columns: repeat(2, -webkit-max-content);
+			grid-template-columns: repeat(2, max-content);
+			-webkit-box-pack: center;
+			justify-content: center;
+			grid-column-gap: 6rem;
+		}
+		@media only screen and(min-width: $bp-700) {
+			grid-template-columns: repeat(3, -webkit-max-content);
+			grid-template-columns: repeat(3, max-content);
+		}
+
+		@media only screen and(min-width: $bp-1000) {
+			grid-template-columns: repeat(6, -webkit-max-content);
+			grid-template-columns: repeat(6, max-content);
+		}
+	}
+
+	&__nav {
+		grid-template-columns: repeat(6, -webkit-max-content);
+		grid-template-columns: repeat(6, max-content);
+		grid-column-gap: 0.4rem;
+		font-size: 2rem;
 	}
 
 	&__list_item {
@@ -25,6 +50,7 @@
 
 		&__active {
 			color: $color-light;
+			font-weight: bold;
 		}
 		&:hover {
 			background-color: rgba($color: #fff, $alpha: 0.2);

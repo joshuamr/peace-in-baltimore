@@ -10,6 +10,10 @@
 	border-radius: 5px;
 	border: none;
 	box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.5);
+	@media only screen and(min-width: $tab-port) {
+		width: 45%;
+		margin: 1rem 5% 1rem 0;
+	}
 }
 
 .cta {
@@ -33,7 +37,7 @@
 	@extend %clip-path-bottom-pointdown;
 
 	&__learn_more {
-		padding: 3rem 3rem calc(100% - 100vh * 0.225 + 3rem);
+		padding: 3rem 3rem calc(100vh * 0.225 + 3rem);
 	}
 
 	&__title {
@@ -42,6 +46,13 @@
 		margin-bottom: 1rem;
 		&__large {
 			font-size: 4.5rem;
+		}
+	}
+
+	&__input {
+		@media only screen and(min-width: $tab-port) {
+			display: -webkit-box;
+			display: flex;
 		}
 	}
 

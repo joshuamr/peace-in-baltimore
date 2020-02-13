@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ReactComponent as Lotus } from "../../../../assets/images/Lotus.svg";
+import { ReactComponent as Lotus } from "../../../../assets/images/PeaceLotus.svg";
 import classes from "./Lotuses.module.scss";
 
 const Lotuses = props => {

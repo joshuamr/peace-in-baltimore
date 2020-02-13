@@ -1,0 +1,22 @@
+%tab-port-flex {
+	@media only screen and(min-width: $tab-port) {
+		display: -webkit-box;
+		display: flex;
+	}
+}
+
+%feature-box {
+	width: 80%;
+	border: 1px solid $color-orange;
+	box-shadow: 0 3px 1rem rgba(#000, 0.8);
+	padding: 2rem 4rem 4rem;
+	border-radius: 3px;
+	color: $color-blue;
+	text-align: center;
+	z-index: 10;
+	background-color: white;
+
+	@media only screen and(min-width: $tab-port) {
+		margin: 5rem 3rem;
+	}
+}

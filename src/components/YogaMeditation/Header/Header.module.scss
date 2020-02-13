@@ -1,5 +1,4 @@
-@import "../../../sass/variables";
-@import "../../../sass/animations";
+@import "../../../sass/main";
 
 %heading {
 	color: white;
@@ -20,23 +19,16 @@
 	grid-template-rows: repeat(3, -webkit-min-content);
 	grid-template-rows: repeat(3, min-content);
 	grid-row-gap: 0.8rem;
-	background-image: -webkit-gradient(
-			linear,
-			left top, right bottom,
-			from(rgba($color-blue, 0.1)),
-			to(rgba($color-blue-dark, 0.3))
-		),
-		url(../../../assets/images/hero1920.jpg);
-	background-image: linear-gradient(
-			to right bottom,
-			rgba($color-blue, 0.1),
-			rgba($color-blue-dark, 0.3)
-		),
-		url(../../../assets/images/hero1920.jpg);
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-	clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-	background-size: cover;
-	background-position: 82% 100%;
+	background-blend-mode: soft-light;
+
+	&__meditation {
+		@include header-background("../assets/images/hero1920.jpg");
+		background-position: 80% 100%;
+	}
+	&__yoga {
+		@include header-background("../assets/images/yoga-hero-640.jpg");
+		background-position: 50% 100%;
+	}
 }
 
 .heading {
@@ -45,6 +37,16 @@
 		grid-column: 1/2;
 		-webkit-animation: flipInUp 1s ease-out;
 		animation: flipInUp 0.5s ease-out;
+
+		&__yoga {
+			font-size: 6rem;
+			@media only screen and(min-width: $phone) {
+				font-size: 10rem;
+			}
+			@media only screen and(min-width: $tab-port) {
+				font-size: 12rem;
+			}
+		}
 	}
 	&__2 {
 		@extend %heading;
@@ -53,6 +55,15 @@
 		animation: appear 0.5s;
 		-webkit-animation: flipInUp 0.5s ease-out 0.5s backwards;
 		animation: flipInUp 0.5s ease-out 0.5s backwards;
+		&__meditation {
+			font-size: 6rem;
+			@media only screen and(min-width: $phone) {
+				font-size: 7rem;
+			}
+			@media only screen and(min-width: $tab-port) {
+				font-size: 9rem;
+			}
+		}
 	}
 	&__3 {
 		@extend %heading;
@@ -68,12 +79,16 @@
 	height: 1rem;
 	width: 1rem;
 	position: absolute;
-	top: 60%;
 	background-color: transparent;
-	border: 1px dotted $color-orange;
-	-webkit-animation: sparkle 3s backwards; //forwards;
-	animation: sparkle 3s backwards; // forwards;
+	border: 1px dotted $color-light;
+	-webkit-animation: sparkle 3s forwards;
+	animation: sparkle 3s forwards;
 	right: calc(50% + -0.32 * 100vw + 95px);
 	-webkit-transform: translateX(50%);
 	transform: translateX(50%);
+	top: 53%;
+
+	@media only screen and(min-width: $bp-850) {
+		right: 30.5%;
+	}
 }

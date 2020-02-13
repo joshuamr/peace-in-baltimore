@@ -27,11 +27,12 @@ html {
 body {
 	box-sizing: border-box;
 	font-family: $font-display;
-	//padding: 30px;
 
-	// @include respond(tab-port) {
-	// 	padding: 0;
-	// }
+	@media only screen and(min-width: $tab-port) {
+		padding: 3rem;
+	}
+	max-width: 120rem;
+	margin: 0 auto;
 }
 
 .no__scroll {

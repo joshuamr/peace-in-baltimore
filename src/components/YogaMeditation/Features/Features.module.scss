@@ -1,0 +1,5 @@
+@import "../../../sass/main";
+
+.features {
+	@extend %tab-port-flex;
+}

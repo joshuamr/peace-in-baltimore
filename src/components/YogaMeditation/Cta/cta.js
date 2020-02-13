@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import classes from "./cta.module.scss";
 import Lotuses from "./Lotuses/Lotuses";
 import Button from "../Button/Button";
@@ -12,18 +11,20 @@ const Cta = props => {
 
 			<div className={classes.cta__learn_more}>
 				<h3 className={classes.cta__title}>Learn More</h3>
-				<input
-					type="text"
-					className={classes.cta__name}
-					id="name"
-					placeholder="Full Name"
-				/>
-				<input
-					type="email"
-					className={classes.cta__email}
-					id="email"
-					placeholder="Email"
-				/>
+				<div className={classes.cta__input}>
+					<input
+						type="text"
+						className={classes.cta__name}
+						id="name"
+						placeholder="Full Name"
+					/>
+					<input
+						type="email"
+						className={classes.cta__email}
+						id="email"
+						placeholder="Email"
+					/>
+				</div>
 				<div className={classes.cta__btn}>
 					<Button clicked={submitForm}>Submit</Button>
 				</div>

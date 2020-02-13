@@ -1,0 +1,12 @@
+@import "../../../../sass/main";
+
+.feature {
+	@extend %feature-box;
+	&__image {
+		width: 80%;
+		max-height: 15rem;
+		border-radius: 5px;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+}

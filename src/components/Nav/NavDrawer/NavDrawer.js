@@ -1,5 +1,4 @@
 import React from "react";
-import { links } from "../../../util/util";
 import classes from "./NavDrawer.module.scss";
 import LinksList from "../../LinksList/LinksList";
 
@@ -8,7 +7,7 @@ const NavDrawer = props => {
 	if (props.drawerOpen) className = classes.drawer + " " + classes.open;
 	return (
 		<div className={className}>
-			<LinksList />
+			<LinksList drawer={true} clicked={props.linkChosen} />
 		</div>
 	);
 };

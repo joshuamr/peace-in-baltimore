@@ -10,7 +10,13 @@ $color-light: #eb5;
 //ea4
 $apex-distance: calc(100vh * 0.225);
 
-$bp-phone: 37.5em;
+$bp-400: 25rem;
+$phone: 37.5em;
+$bp-700: 43.75em;
+$bp-850: 53.125em;
+$tab-port: 56.25em;
+$bp-1000: 62.5em;
+$tab-land: 75em;
 
 $font-display: "Josefin Slab", serif;
 $font-title: "Philosopher", sans-serif;
@@ -71,8 +77,14 @@ $section-height: 90vh;
 }
 
 %clip-path-top-pointdown {
-	-webkit-clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 100%,
+		0 100%
+	);
+	clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
 }
 
 %clip-path-hex {

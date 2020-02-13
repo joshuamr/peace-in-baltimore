@@ -31,7 +31,19 @@
 	text-align: center;
 	margin-top: calc(-1 * 100vh * 0.225);
 	padding: calc(100vh * 0.225 + 3rem) 4rem calc(100vh * 0.225 - 3rem);
+
+	@media only screen and(min-width: $phone) {
+		padding: calc(100vh * 0.225 + 3rem) 4rem 9.5rem;
+	}
+
 	@extend %clip-path-pointdown;
+
+	&__sub_heading {
+		font-size: 3rem;
+		@media only screen and(min-width: $bp-400) {
+			font-size: 3.5rem;
+		}
+	}
 
 	&__when {
 		margin-bottom: 1rem;
@@ -73,8 +85,8 @@
 	filter: invert(1);
 
 	@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
-		background-color: $color-orange;
-		-webkit-mask-image: url(../../../assets/images/LotusFlower329.svg);
+		background-color: $color-light;
+		-webkit-mask-image: url(../../../assets/images/PeaceLotus.svg);
 
 		mask-image: url(../../../assets/images/LotusFlower329.svg);
 		-webkit-mask-size: cover;

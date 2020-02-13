@@ -6,10 +6,29 @@ const ValueProp = props => {
 		<Fragment>
 			<div className={classes.valuePropBorder}></div>
 			<div className={classes.valueProp}>
-				<h2>Peace, Joy, Vitality-- </h2>
-				<h1 className={classes.tagLine}>Learn To Meditate</h1>
+				<h2 className={classes.valueProp__sub_heading}>
+					{props.meditation
+						? "Peace, Joy, Vitality"
+						: props.yoga
+						? "Stretch, Breathe, Go Deeper"
+						: ""}
+				</h2>
+				<h1 className={classes.tagLine}>
+					{props.meditation
+						? "Learn To Meditate"
+						: props.yoga
+						? "Hatha Yoga"
+						: ""}{" "}
+				</h1>
 				<div className={classes.lotus}></div>
-				<h2 className={classes.valueProp__when}> Sundays 10:00am </h2>
+				<h2 className={classes.valueProp__when}>
+					{" "}
+					{props.meditation
+						? "Sundays 10:00am - 11:15am"
+						: props.yoga
+						? "Sundays 11:15am - 12:30pm"
+						: ""}
+				</h2>
 				<h4 className={classes.valueProp__where}>
 					<a
 						href="https://www.naomeditation.com/"

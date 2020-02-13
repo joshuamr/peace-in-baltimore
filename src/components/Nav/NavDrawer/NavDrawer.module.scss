@@ -2,7 +2,7 @@
 @import "../../../sass/animations";
 
 .drawer {
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -10,6 +10,8 @@
 	-webkit-transition: all 0.4s;
 	-webkit-transition: all 1s;
 	transition: all 1s;
+	font-size: 3rem;
+	overflow: hidden;
 
 	background-image: radial-gradient(
 		rgba($color-blue-light, 1),
@@ -17,7 +19,7 @@
 	);
 	display: grid;
 	-webkit-box-align: center;
-	        align-items: center;
+	align-items: center;
 }
 
 .closed {

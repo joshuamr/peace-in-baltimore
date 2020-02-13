@@ -1,14 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./Header.module.scss";
-import ValueProp from "../ValueProp/ValueProp";
 
 const Header = props => {
+	let classNames = {
+		header: classes.header,
+		heading__1: classes.heading__1,
+		heading__2: classes.heading__2
+	};
+	let addClass = (className, classNameToAdd) => {
+		classNames[className] =
+			classNames[className] + " " + classes[classNameToAdd];
+	};
+	let height = window.innerHeight;
+	// let top = (-1 * height ** 2) / 5000 + 0.31 * height - 57 + "%";
+	// if (window.innerWidth > 850) top = 0.49 * height + "px";
+	// if (window.innerWidth > 1000) top = 0.38 * height + "px"; style={{ top }}
+	if (props.yoga) {
+		addClass("header", "header__yoga");
+		addClass("heading__1", "heading__1__yoga");
+	}
+	if (props.meditation) {
+		addClass("header", "header__meditation");
+		addClass("heading__2", "heading__2__meditation");
+	}
 	return (
-		<header className={classes.header}>
-			<h1 className={classes.heading__1}> Yoga</h1>
-			<h1 className={classes.heading__2}>Meditation</h1>
+		<header className={classNames.header}>
+			<h1 className={classNames.heading__1}> Yoga</h1>
+			<h1 className={classNames.heading__2}>Meditation</h1>
 			<h1 className={classes.heading__3}>Baltimore</h1>
-			<div className={classes.sparkle}></div>
+			{props.meditation && (
+				<div className={classes.sparkle} ></div>
+			)}
 		</header>
 	);
 };
