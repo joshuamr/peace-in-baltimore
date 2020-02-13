@@ -2,7 +2,7 @@
 
 .feature {
 	@extend %feature-box;
-	@extend %feature-box-outline;
+	@include feature-box-outline;
 	&__image {
 		width: 80%;
 		max-height: 15rem;

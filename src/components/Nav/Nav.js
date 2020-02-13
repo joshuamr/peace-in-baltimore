@@ -20,11 +20,7 @@ const Nav = props => {
 
 	return (
 		<nav className={classes.nav}>
-			{mobile ? (
-				<MobileNav {...props} linkChosen={props.linkChosen} />
-			) : (
-				<LinksList nav={true} />
-			)}
+			{mobile ? <MobileNav {...props} /> : <LinksList nav={true} />}
 		</nav>
 	);
 };

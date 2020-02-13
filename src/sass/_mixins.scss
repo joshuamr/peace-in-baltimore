@@ -1,8 +1,7 @@
 @mixin header-background($url) {
 	background-image: -webkit-gradient(
 			linear,
-			left top,
-			right bottom,
+			left top, right bottom,
 			from(rgba($color-blue, 0.1)),
 			to(rgba($color-blue-dark, 0.3))
 		),
@@ -16,4 +15,14 @@
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 	clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 	background-size: cover;
+}
+
+@mixin feature-box-outline {
+	padding: 2rem 4rem 4rem;
+	border: 1px solid $color-light;
+	@include short-box-shadow;
+}
+
+@mixin short-box-shadow {
+	box-shadow: 0 0.5rem 1rem rgba(#000, 0.8);
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Feature.module.scss";
-import Button from "../../Button/Button";
 
 const Feature = props => {
+	let showModal = () => {};
 	return (
 		<div className={classes.feature}>
 			<div className={classes.feature__side_one}>
@@ -21,12 +21,12 @@ const Feature = props => {
 			</div>
 			<div className={classes.feature__side_two}>
 				<div className={classes.feature__learn_more}>
-					<div className={classes.feature__learn_more__text}>
+					<div
+						className={classes.feature__learn_more__text}
+						onClick={showModal}
+					>
 						Learn More
 					</div>
-					{/* <div className={classes.feature__learn_more__text}>
-						More
-					</div> */}
 				</div>
 			</div>
 		</div>

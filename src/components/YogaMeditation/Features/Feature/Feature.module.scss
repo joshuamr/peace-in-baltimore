@@ -3,14 +3,22 @@
 .feature {
 	@extend %feature-box;
 	margin: 5rem auto;
-	cursor: pointer;
 	position: relative;
 	-webkit-perspective: 150rem;
 	perspective: 150rem;
+	padding: 2rem 0 0;
+	border: 1px solid $color-light;
+	@include short-box-shadow;
 
-	&:hover &__side_one {
-		-webkit-transform: rotateY(-180deg);
-		transform: rotateY(-180deg);
+	@media only screen and(min-width: $tab-port) {
+		padding: 0;
+		border: none;
+		box-shadow: none;
+
+		&:hover &__side_one {
+			-webkit-transform: rotateY(-180deg);
+			transform: rotateY(-180deg);
+		}
 	}
 
 	&:hover > &__side_two {
@@ -20,7 +28,6 @@
 
 	&__side {
 		&_one {
-			@extend %feature-box-outline;
 			-webkit-transition: all 0.4s;
 			transition: all 0.4s;
 			-webkit-backface-visibility: none;
@@ -28,20 +35,15 @@
 			-webkit-transform: roateY(0);
 			transform: rotateY(0);
 			height: 100%;
+			margin: 0 4rem;
+			@media only screen and(min-width: $tab-port) {
+				@include feature-box-outline;
+				margin: 0 auto;
+			}
 		}
 
 		&_two {
-			-webkit-transition: all 0.4s;
-			border-radius: 5px;
-			transition: all 0.4s;
-			-webkit-backface-visibility: none;
-			backface-visibility: hidden;
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			top: 0;
-			left: 0;
-			@extend %short-box-shadow;
+			border-radius: 0 0 5px 5px;
 			background-image: -webkit-gradient(
 				linear,
 				left top,
@@ -53,18 +55,33 @@
 				rgba($color-light, 0.3),
 				rgba($color-light, 0.7)
 			);
-			-webkit-transform: rotateY(180deg);
-			transform: rotateY(180deg);
 			display: -webkit-box;
 			display: flex;
 			-webkit-box-align: center;
 			align-items: center;
 			-webkit-box-pack: center;
 			justify-content: center;
-		}
-	}
+			padding: 2rem 0 1rem;
+			margin-top: 3rem;
 
-	&:hover {
+			@media only screen and(min-width: $tab-port) {
+				@include short-box-shadow;
+				border-radius: 5px;
+				margin-top: 0;
+				padding: 0;
+				-webkit-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+				-webkit-transition: all 0.4s;
+				transition: all 0.4s;
+				-webkit-backface-visibility: none;
+				backface-visibility: hidden;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+		}
 	}
 
 	@media only screen and(min-width: $tab-port) {
@@ -92,6 +109,8 @@
 		color: $color-blue;
 		font-weight: bold;
 
+		cursor: pointer;
+
 		&__text:after {
 			-webkit-transition: all 0.4s;
 			transition: all 0.4s;
@@ -100,7 +119,7 @@
 			transform: scaleX(0);
 			border-bottom: 3px solid $color-blue;
 			display: block;
-			margin: 0.5rem 0 3rem;
+			margin: 0.5rem 0;
 			// transform-origin: 0% 50%;
 		}
 
