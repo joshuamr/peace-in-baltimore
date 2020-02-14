@@ -1,0 +1,91 @@
+@import "../../sass/main";
+
+.backdrop {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba($color-blue-light, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	-webkit-transition: top 0.4s;
+	transition: top 0.4s;
+
+	&__closed {
+		top: -100%;
+	}
+}
+
+.modal {
+	z-index: 200;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	max-width: 60rem;
+	width: 80%;
+	border-radius: 5px;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background-color: white;
+	box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
+	-webkit-transition: top 0.4s;
+	transition: top 0.4s;
+
+	&__closed {
+		top: -100%;
+	}
+	&__close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		line-height: 0.3;
+		cursor: pointer;
+		color: white;
+		&:hover,
+		&:active {
+			color: $color-orange-dark;
+		}
+	}
+
+	@media only screen and(min-width: $tab-port) {
+		max-width: 60%;
+	}
+
+	&__image {
+		height: 25rem;
+		width: 25rem;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+	&__title {
+		font-size: 5rem;
+		display: -webkit-box;
+		display: flex;
+		height: 20rem;
+		-webkit-box-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		align-items: center;
+		padding: 1rem;
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		background-size: cover;
+		background-position: 0 0;
+
+		@media only screen and(min-width: $bp-500) {
+			font-size: 5rem;
+			background-position: 0 37%;
+		}
+	}
+
+	&__text {
+		padding: 3rem;
+		font-size: 2rem;
+		color: $color-blue;
+
+		@media only screen and(min-width: $bp-400) {
+			font-size: 2.4rem;
+		}
+	}
+}

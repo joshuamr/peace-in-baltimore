@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Feature.module.scss";
+import { ModalContext } from "../../../../Context/modal-context.js";
+import Modal from "../../../Modal/Modal";
 
 const Feature = props => {
-	let showModal = () => {};
+	let modalContext = useContext(ModalContext);
+	let { setModalOpen, setModalComponents } = modalContext;
+	let openModal = () => {
+		console.log(props.modalText);
+		setModalComponents({
+			title: props.title,
+			text: props.modalText,
+			image: props.modalImage
+		});
+		setModalOpen(true);
+	};
 	return (
 		<div className={classes.feature}>
 			<div className={classes.feature__side_one}>
@@ -23,7 +35,7 @@ const Feature = props => {
 				<div className={classes.feature__learn_more}>
 					<div
 						className={classes.feature__learn_more__text}
-						onClick={showModal}
+						onClick={openModal}
 					>
 						Learn More
 					</div>

@@ -10,7 +10,11 @@
 }
 
 html {
-	font-size: 62.5%;
+	font-size: 50%;
+
+	@media only screen and(min-width: $bp-500) {
+		font-size: 62.5%;
+	}
 	// @include respond(tab-land) {
 	// 	font-size: 56.25%; //1rem=9px
 	// }

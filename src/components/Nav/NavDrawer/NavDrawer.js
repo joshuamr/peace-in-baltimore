@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import classes from "./NavDrawer.module.scss";
 import LinksList from "../../LinksList/LinksList";
 import { NavContext } from "../../../Context/nav-context";
+import { toggleNoScroll } from "../../../util/util";
 
 const NavDrawer = props => {
 	const navContext = useContext(NavContext);
@@ -10,8 +11,7 @@ const NavDrawer = props => {
 		document.getElementById("checkbox").checked = false;
 		setDrawerOpen(!drawerOpen);
 	};
-	document.body.classList.toggle("no__scroll", drawerOpen);
-	document.getElementById("root").classList.toggle("no__scroll", drawerOpen);
+	toggleNoScroll(drawerOpen);
 	let className = classes.drawer + " " + classes.closed;
 	if (drawerOpen) className = classes.drawer + " " + classes.open;
 	return (

@@ -6,6 +6,8 @@ import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import About from "./containers/About/About";
 import NavContextProvider from "./Context/nav-context";
+import ModalContextProvider from "./Context/modal-context.js";
+import Modal from "./components/Modal/Modal";
 
 function App() {
 	return (
@@ -13,11 +15,14 @@ function App() {
 			<NavContextProvider>
 				<Nav />
 			</NavContextProvider>
-			<Switch>
-				<Route path="/about" component={About} />
-				<Route path="/yoga" component={YogaMeditation} />
-				<Route path="/" component={YogaMeditation} />
-			</Switch>
+			<ModalContextProvider>
+				<Switch>
+					<Route path="/about" component={About} />
+					<Route path="/yoga" component={YogaMeditation} />
+					<Route path="/" component={YogaMeditation} />
+				</Switch>
+				<Modal />
+			</ModalContextProvider>
 			<Footer />
 		</BrowserRouter>
 	);

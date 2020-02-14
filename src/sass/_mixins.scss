@@ -12,8 +12,7 @@
 			rgba($color-blue-dark, 0.3)
 		),
 		url($url);
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-	clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+	@include header-clip-path;
 	background-size: cover;
 }
 
@@ -25,4 +24,28 @@
 
 @mixin short-box-shadow {
 	box-shadow: 0 0.5rem 1rem rgba(#000, 0.8);
+}
+
+@mixin gradient-background {
+	background-image: radial-gradient(
+		rgba($color-blue-light, 1),
+		rgba($color-blue, 1)
+	);
+}
+
+@mixin header-clip-path {
+	-webkit-clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
 }

@@ -1,3 +1,150 @@
+// @import "../../../../sass/main";
+
+// .feature {
+// 	@extend %feature-box;
+// 	margin: 5rem auto;
+// 	position: relative;
+// 	-webkit-perspective: 150rem;
+// 	perspective: 150rem;
+// 	padding: 0;
+// 	border: none;
+// 	box-shadow: none;
+// 	@media only screen and (hover: hover) {
+// 		&:hover &__side_one {
+// 			-webkit-transform: rotateY(-180deg);
+// 			transform: rotateY(-180deg);
+// 		}
+// 		&:hover > &__side_two,
+// 		&:hover &__side_two {
+// 			-webkit-transform: rotateY(0);
+// 			transform: rotateY(0);
+// 		}
+// 	}
+
+// 	@media only screen and (hover: none) {
+// 		padding: 2rem 0 0;
+// 		border: 1px solid $color-light;
+// 		@include short-box-shadow;
+// 	}
+
+// 	&__side {
+// 		&_one {
+// 			-webkit-transition: all 0.4s;
+// 			transition: all 0.4s;
+// 			-webkit-backface-visibility: none;
+// 			backface-visibility: hidden;
+// 			-webkit-transform: rotateY(0);
+// 			transform: rotateY(0);
+// 			height: 100%;
+// 			@include feature-box-outline;
+// 			margin: 0 auto;
+
+// 			@media only screen and (hover: none) {
+// 				margin: 0 4rem;
+// 				padding: 0;
+// 				border: none;
+// 				box-shadow: none;
+// 			}
+// 		}
+
+// 		&_two {
+// 			background-image: -webkit-gradient(
+// 				linear,
+// 				left top,
+// 				left bottom,
+// 				from(white),
+// 				to($color-light)
+// 			);
+// 			background-image: radial-gradient(
+// 				rgba($color-light, 0.3),
+// 				rgba($color-light, 0.7)
+// 			);
+// 			display: -webkit-box;
+// 			display: flex;
+// 			-webkit-box-align: center;
+// 			align-items: center;
+// 			-webkit-box-pack: center;
+// 			justify-content: center;
+// 			border-radius: 5px;
+// 			margin-top: 0;
+// 			padding: 0;
+// 			@include short-box-shadow;
+
+// 			-webkit-transform: rotateY(180deg);
+// 			transform: rotateY(180deg);
+// 			-webkit-transition: all 0.4s;
+// 			transition: all 0.4s;
+// 			-webkit-backface-visibility: none;
+// 			backface-visibility: hidden;
+// 			position: absolute;
+// 			height: 100%;
+// 			width: 100%;
+// 			top: 0;
+// 			left: 0;
+
+// 			@media only screen and (hover: none) {
+// 				margin-top: 3rem;
+// 				border-radius: 0 0 5px 5px;
+// 				padding: 2rem 0 1rem;
+// 				box-shadow: none;
+// 				-webkit-transform: rotateY(0deg);
+// 				transform: rotateY(0deg);
+// 				position: relative;
+// 				height: auto;
+// 				width: auto;
+// 			}
+// 		}
+// 	}
+
+// 	@media only screen and(min-width: $tab-port) {
+// 		&:not(:last-child) {
+// 			margin-right: 5rem;
+// 		}
+// 	}
+// 	&__icon {
+// 		width: 8rem;
+// 		height: 8rem;
+// 		margin: 1rem auto;
+// 	}
+// 	&__title {
+// 		font-size: 2.8rem;
+// 		margin: 3rem auto 2rem;
+// 	}
+// 	&__text {
+// 		font-size: 2.2rem;
+// 		font-style: italic;
+// 	}
+
+// 	&__learn_more {
+// 		font-size: 4rem;
+// 		line-height: 1;
+// 		color: $color-blue;
+// 		font-weight: bold;
+// 		-webkit-transition: all 0.4s;
+// 		transition: all 0.4s;
+
+// 		cursor: pointer;
+
+// 		&__text:after {
+// 			-webkit-transition: all 0.4s;
+// 			transition: all 0.4s;
+// 			content: "";
+// 			-webkit-transform: scaleX(0);
+// 			transform: scaleX(0);
+// 			border-bottom: 3px solid $color-blue;
+// 			display: block;
+// 			margin: 0.5rem 0;
+// 			// transform-origin: 0% 50%;
+// 		}
+
+// 		&:hover &__text:after,
+// 		&:active &__text:after {
+// 			-webkit-transform: scaleX(1);
+// 			transform: scaleX(1);
+// 		}
+// 	}
+// }
+
 @import "../../../../sass/main";
 
 .feature {
@@ -11,6 +158,14 @@
 	@include short-box-shadow;
 
 	@media only screen and(min-width: $tab-port) {
+		display: -webkit-box;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		        flex-direction: column;
+	}
+
+	@media only screen and(hover: hover) {
 		padding: 0;
 		border: none;
 		box-shadow: none;
@@ -19,11 +174,11 @@
 			-webkit-transform: rotateY(-180deg);
 			transform: rotateY(-180deg);
 		}
-	}
 
-	&:hover > &__side_two {
-		-webkit-transform: rotateY(0);
-		transform: rotateY(0);
+		&:hover > &__side_two {
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+		}
 	}
 
 	&__side {
@@ -36,7 +191,7 @@
 			transform: rotateY(0);
 			height: 100%;
 			margin: 0 4rem;
-			@media only screen and(min-width: $tab-port) {
+			@media only screen and(hover: hover) {
 				@include feature-box-outline;
 				margin: 0 auto;
 			}
@@ -64,7 +219,7 @@
 			padding: 2rem 0 1rem;
 			margin-top: 3rem;
 
-			@media only screen and(min-width: $tab-port) {
+			@media only screen and(hover: hover) {
 				@include short-box-shadow;
 				border-radius: 5px;
 				margin-top: 0;
