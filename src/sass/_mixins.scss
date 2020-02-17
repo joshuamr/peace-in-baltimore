@@ -50,19 +50,20 @@
 	);
 }
 
-@mixin singleComponentBackground($url) {
+@mixin singleComponentImage($url) {
 	background-image: -webkit-gradient(
 			linear,
 			left top, left bottom,
-			from(rgba($color-light, 0.8)),
-			to(rgba($color-light, 0.8))
+			from(rgba($color-blue, 0.1)),
+			to(rgba($color-blue, 0.1))
 		),
 		url($url);
 	background-image: linear-gradient(
-			rgba($color-light, 0.8),
-			rgba($color-light, 0.8)
+			rgba($color-blue, 0.1),
+			rgba($color-blue, 0.1)
 		),
 		url($url);
+	height: 100%;
+	width: 100%;
 	background-size: cover;
-	padding: 4rem;
 }

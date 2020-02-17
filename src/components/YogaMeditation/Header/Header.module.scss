@@ -128,4 +128,7 @@
 		left: 68.5625%;
 		bottom: calc(0.35 * 100vw / 1.31687);
 	}
+	@media only screen and(min-width: $tab-land) {
+		bottom: calc(0.35 * 120rem / 1.31687);
+	}
 }
