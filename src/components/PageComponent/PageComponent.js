@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import classes from "./PageComponent.module.scss";
 import { withRouter } from "react-router-dom";
 import { pageComponentData } from "../../util/util";
-import AboutPicture from "../../assets/images/meditating-baltimore.jpg";
+import Contact from "./Contact/Contact";
 
 const About = props => {
 	const page = props.match.path.slice(1);
@@ -25,6 +25,8 @@ const About = props => {
 					<div className={classes.PageComponent__text}>
 						{textRendered}
 					</div>
+
+					{page === "contact" && <Contact />}
 				</main>
 			</div>
 		</Fragment>
