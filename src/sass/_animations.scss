@@ -349,3 +349,35 @@
 		opacity: 0;
 	}
 }
+
+@-webkit-keyframes foldIn {
+	0% {
+		-webkit-transform: scaleY(0.1) scaleX(0);
+		transform: scaleY(0.1) scaleX(0);
+	}
+
+	50% {
+		-webkit-transform: scaleY(0.1) scaleX(1);
+		transform: scaleY(0.1) scaleX(1);
+	}
+	100% {
+		-webkit-transform: scaleY(1) scaleX(1);
+		transform: scaleY(1) scaleX(1);
+	}
+}
+
+@keyframes foldIn {
+	0% {
+		-webkit-transform: scaleY(0.1) scaleX(0);
+		transform: scaleY(0.01) scaleX(0);
+	}
+
+	50% {
+		-webkit-transform: scaleY(0.1) scaleX(1);
+		transform: scaleY(0.01) scaleX(1);
+	}
+	100% {
+		-webkit-transform: scaleY(1) scaleX(1);
+		transform: scaleY(1) scaleX(1);
+	}
+}

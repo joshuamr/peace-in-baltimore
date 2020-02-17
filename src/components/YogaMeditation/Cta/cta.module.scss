@@ -32,7 +32,8 @@
 		url("../../../assets/images/beach-meditation-600.jpg");
 	background-size: cover;
 	// background-color: $color-light;
-	margin: 4rem auto;
+	margin: 0 auto 4rem;
+	// background-position: 50% 0;
 
 	@extend %clip-path-bottom-pointdown;
 

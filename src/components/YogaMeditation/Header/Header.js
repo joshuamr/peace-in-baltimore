@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classes from "./Header.module.scss";
+import MeditationPic from "../../../assets/images/hero1920.jpg"; //'../../../assets/images/hero1920.jpg"';
 
 const Header = props => {
 	let classNames = {
@@ -11,10 +12,6 @@ const Header = props => {
 		classNames[className] =
 			classNames[className] + " " + classes[classNameToAdd];
 	};
-	let height = window.innerHeight;
-	// let top = (-1 * height ** 2) / 5000 + 0.31 * height - 57 + "%";
-	// if (window.innerWidth > 850) top = 0.49 * height + "px";
-	// if (window.innerWidth > 1000) top = 0.38 * height + "px"; style={{ top }}
 	if (props.yoga) {
 		addClass("header", "header__yoga");
 		addClass("heading__1", "heading__1__yoga");
@@ -23,14 +20,14 @@ const Header = props => {
 		addClass("header", "header__meditation");
 		addClass("heading__2", "heading__2__meditation");
 	}
+
 	return (
 		<header className={classNames.header}>
+			{/* <img src={MeditationPic} className={classes.header__background} /> */}
 			<h1 className={classNames.heading__1}> Yoga</h1>
 			<h1 className={classNames.heading__2}>Meditation</h1>
 			<h1 className={classes.heading__3}>Baltimore</h1>
-			{props.meditation && (
-				<div className={classes.sparkle} ></div>
-			)}
+			{props.meditation && <div className={classes.sparkle}></div>}
 		</header>
 	);
 };

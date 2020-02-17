@@ -4,10 +4,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import YogaMeditation from "./containers/YogaMeditation/YogaMeditation";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
-import About from "./containers/About/About";
 import NavContextProvider from "./Context/nav-context";
 import ModalContextProvider from "./Context/modal-context.js";
+import Cta from "./components/YogaMeditation/Cta/cta";
 import Modal from "./components/Modal/Modal";
+import PageComponent from "./components/PageComponent/PageComponent";
 
 function App() {
 	return (
@@ -17,12 +18,16 @@ function App() {
 			</NavContextProvider>
 			<ModalContextProvider>
 				<Switch>
-					<Route path="/about" component={About} />
+					<Route path="/about" component={PageComponent} />
+					<Route path="/resources" component={PageComponent} />
+					<Route path="/register" component={PageComponent} />
+					<Route path="/contact" component={PageComponent} />
 					<Route path="/yoga" component={YogaMeditation} />
 					<Route path="/" component={YogaMeditation} />
 				</Switch>
 				<Modal />
 			</ModalContextProvider>
+			<Cta />
 			<Footer />
 		</BrowserRouter>
 	);

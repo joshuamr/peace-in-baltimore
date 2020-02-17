@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./cta.module.scss";
 import Lotuses from "./Lotuses/Lotuses";
 import Button from "../Button/Button";
+import { dataAos } from "../../../util/util";
 
 const Cta = props => {
 	const submitForm = () => {};

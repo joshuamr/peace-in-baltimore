@@ -1,0 +1,59 @@
+@import "../../sass/main";
+
+.PageComponent {
+	// &__about {
+	// 	@include singleComponentBackground(
+	// 		"../assets/images/meditating-baltimore.jpg"
+	// 	);
+	// }
+	// &__resources {
+	// 	@include singleComponentBackground(
+	// 		"../assets/images/flower-meditation-large.jpg"
+	// 	);
+	// }
+	// &__register {
+	// 	@include singleComponentBackground(
+	// 		"../assets/images/river-meditator-600.jpg"
+	// 	);
+	// }
+	// &__contact {
+	// 	@include singleComponentBackground("../assets/images/victory-600.jpg");
+	// }
+
+	background-position: 50%;
+	display: grid;
+	justify-items: center;
+	padding: 4rem;
+	@media only screen and(min-width: $bp-500) {
+		padding: 3rem 4rem;
+	}
+
+	&__text {
+		color: $color-blue;
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		font-weight: bold;
+	}
+	&__title {
+		color: $color-blue;
+		font-family: $font-title;
+		font-size: 6rem;
+		margin-bottom: 2rem;
+	}
+	&__image {
+		border-radius: 50%;
+		height: 26rem;
+		width: 26rem;
+		border: 2px solid $color-blue;
+		margin: 0 auto;
+		overflow: hidden;
+		-o-object-position: 40%;
+		object-position: 40% 28%;
+		-o-object-fit: cover;
+		object-fit: cover;
+		@media only screen and(min-width: $bp-500) {
+			height: 25rem;
+			width: 25rem;
+		}
+	}
+}

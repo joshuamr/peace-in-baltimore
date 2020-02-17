@@ -68,14 +68,14 @@ const Testimonials = props => {
 		};
 	}, []);
 	return (
-		<Fragment>
+		<div>
 			<div className={classes.testimonials}>
 				<Testimonial {...testimonial1} classToAdd={classList1} />
 			</div>
 			<div className={classes.testimonials}>
 				<Testimonial {...testimonial2} classToAdd={classList2} />
 			</div>
-		</Fragment>
+		</div>
 	);
 };
 

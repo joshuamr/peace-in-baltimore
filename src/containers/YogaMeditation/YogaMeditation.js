@@ -4,7 +4,6 @@ import ValueProp from "../../components/YogaMeditation/ValueProp/ValueProp";
 import Features from "../../components/YogaMeditation/Features/Features";
 import Testimonials from "../../components/YogaMeditation/Testimonials/Testimonials";
 import classes from "./YogaMeditation.module.scss";
-import Cta from "../../components/YogaMeditation/Cta/cta";
 import ModalContextProvider from "../../Context/modal-context";
 import Modal from "../../components/Modal/Modal";
 
@@ -21,7 +20,6 @@ const YogaMeditaiton = props => {
 			<div className={classes.testimonials}>
 				<Testimonials yoga={yoga} meditation={meditation} />
 			</div>
-			<Cta yoga={yoga} meditation={meditation}></Cta>
 		</Fragment>
 	);
 };

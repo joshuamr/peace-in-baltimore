@@ -49,3 +49,20 @@
 		0 calc(100% - 100vh * 0.225)
 	);
 }
+
+@mixin singleComponentBackground($url) {
+	background-image: -webkit-gradient(
+			linear,
+			left top, left bottom,
+			from(rgba($color-light, 0.8)),
+			to(rgba($color-light, 0.8))
+		),
+		url($url);
+	background-image: linear-gradient(
+			rgba($color-light, 0.8),
+			rgba($color-light, 0.8)
+		),
+		url($url);
+	background-size: cover;
+	padding: 4rem;
+}
