@@ -10,17 +10,20 @@ const About = props => {
 	let className =
 		classes.PageComponent + " " + classes["PageComponent__" + page];
 	let textRendered = text.map(paragraph => {
-		return <p className={classes.PageComponent__text}>{paragraph}</p>;
+		return <p className={classes.PageComponent__text_p}>{paragraph}</p>;
 	});
 	return (
 		<Fragment>
 			<div className={className}>
-				<img
-					src={AboutPicture}
-					className={classes.PageComponent__image}
-				/>
-				><h1 className={classes.PageComponent__title}>{title}</h1>
-				{textRendered}
+				<div className={classes.PageComponent__image}>
+					<div className={classes.PageComponent__image_pic} />
+				</div>
+				<main className={classes.PageComponent__main}>
+					<h1 className={classes.PageComponent__title}>{title}</h1>
+					<div className={classes.PageComponent__text}>
+						{textRendered}
+					</div>
+				</main>
 			</div>
 		</Fragment>
 	);

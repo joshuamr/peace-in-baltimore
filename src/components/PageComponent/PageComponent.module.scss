@@ -20,40 +20,78 @@
 	// 	@include singleComponentBackground("../assets/images/victory-600.jpg");
 	// }
 
-	background-position: 50%;
-	display: grid;
-	justify-items: center;
-	padding: 4rem;
-	@media only screen and(min-width: $bp-500) {
-		padding: 3rem 4rem;
+	&__main {
+		@media only screen and(min-width: $bp-500) {
+			background-color: white;
+			width: 70%;
+			border: 3px solid $color-light;
+			margin-top: -10rem;
+			margin-left: 4rem;
+			padding: 6rem 4rem 1rem;
+			z-index: 2;
+			position: relative;
+			border-radius: 5px;
+			margin-bottom: 3rem;
+		}
 	}
 
 	&__text {
-		color: $color-blue;
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
-		font-weight: bold;
+		padding: 2rem 6rem 3rem;
+		@media only screen and(min-width: $bp-500) {
+			padding: 2rem 0 0;
+		}
+		&_p {
+			color: $color-blue;
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+			font-weight: bold;
+		}
 	}
 	&__title {
 		color: $color-blue;
-		font-family: $font-title;
 		font-size: 6rem;
-		margin-bottom: 2rem;
+		text-align: center;
 	}
 	&__image {
 		border-radius: 50%;
 		height: 26rem;
 		width: 26rem;
-		border: 2px solid $color-blue;
-		margin: 0 auto;
+		border: 2px solid $color-light;
+		margin: 4rem auto 3rem;
 		overflow: hidden;
-		-o-object-position: 40%;
-		object-position: 40% 28%;
-		-o-object-fit: cover;
-		object-fit: cover;
+		box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.8);
+
+		&_pic {
+			height: 100%;
+			width: 100%;
+			background-image: -webkit-gradient(
+					linear,
+					left top, left bottom,
+					from(rgba($color-blue, 0.1)),
+					to(rgba($color-blue, 0.1))
+				),
+				url(../../assets/images/meditating-baltimore.jpg);
+			background-image: linear-gradient(
+					rgba($color-blue, 0.1),
+					rgba($color-blue, 0.1)
+				),
+				url(../../assets/images/meditating-baltimore.jpg);
+			background-size: cover;
+			background-position: 53% 28%;
+			-webkit-transform: scale(2);
+			transform: scale(2);
+			@media only screen and(min-width: $phone) {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				background-position: 53% 67%;
+			}
+		}
 		@media only screen and(min-width: $bp-500) {
-			height: 25rem;
-			width: 25rem;
+			border: none;
+			border-radius: 0 0 5px 5px;
+			width: 100%;
+			margin: 0 0 3rem;
+			height: 60vh;
 		}
 	}
 }
