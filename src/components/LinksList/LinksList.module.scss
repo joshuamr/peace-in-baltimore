@@ -25,6 +25,10 @@
 			grid-template-columns: repeat(6, -webkit-max-content);
 			grid-template-columns: repeat(6, max-content);
 		}
+		@media only screen and(min-width: $tab-land) {
+			font-size: 2.2rem;
+			grid-column-gap: 8rem;
+		}
 	}
 
 	&__nav {

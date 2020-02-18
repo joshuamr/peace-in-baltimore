@@ -1,7 +1,7 @@
 @import "../../../sass/main";
 .Contact {
 	display: grid;
-    grid-row-gap:3rem;
+    grid-row-gap:4rem;
     padding: 0rem 4rem 4rem;
     justify-items: center;
 
@@ -31,15 +31,25 @@
             outline: none;
             border: 1px solid $color-blue;
         }
+        &__error{
+            border: 1px solid red;
+        }
     }
 
     &__input {
         height: 4rem;
     }
 
-    // &__submit {
-    //     padding: 2rem;
-    //     font-size: 2rem;
-    //     background-color: 
-    // }
+    &__submit {
+       
+        @include button($shadow-long:false);
+    }
+
+    &__err {
+            justify-self: start;
+    color: red;
+    margin-left: 1.5rem;
+    margin-top: -2.5rem;
+    font-size: 2rem;
+    }
 }

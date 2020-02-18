@@ -7,18 +7,20 @@ const Contact = props => {
 	const { register, handleSubmit, watch, errors } = useForm();
 	const onSubmit = data => {
 		console.log(data);
-	};
+	}; 
+	let inputClass = classes.Contact__input
+	let setInputClass = (name) => errors[name] ? inputClass + " " + classes.Contact__input__error : inputClass
 	return (
-		<form className={classes.Contact}>
+		<form className={classes.Contact} onSubmit = {handleSubmit(onSubmit)}>
 			<input
 				name="name"
 				placeholder="Full Name"
 				ref={register({ required: true })}
-				className={classes.Contact__input}
+				className={setInputClass("name")}
 			/>
-			{errors.name && (
+			{errors.name &&  (
 				<span className={classes.Contact__err}>
-					Please enter your name
+					Please enter your name.
 				</span>
 			)}
 			<input
@@ -28,11 +30,11 @@ const Contact = props => {
 					required: true,
 					pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 				})}
-				className={classes.Contact__input}
+				className={setInputClass("email")}
 			/>
 			{errors.email && (
 				<span className={classes.Contact__err}>
-					Please enter a valid email address
+					Please enter a valid email address.
 				</span>
 			)}
 			<input
@@ -41,11 +43,11 @@ const Contact = props => {
 				ref={register({
 					required: true
 				})}
-				className={classes.Contact__input}
+				className={setInputClass("subject")}
 			/>
 			{errors.subject && (
 				<span className={classes.Contact__err}>
-					Please enter a subject
+					Please enter a subject.
 				</span>
 			)}
 
@@ -55,16 +57,15 @@ const Contact = props => {
 				ref={register({
 					required: true
 				})}
-				className={classes.Contact__textarea}
+				className={errors.content ? classes.Contact__textarea + " " + classes.Contact__textarea__error : classes.Contact__textarea}
 				rows = "20"
 			></textarea>
 			{errors.content && (
 				<span className={classes.Contact__err}>
-					Please write a message
+					Please write a message.
 				</span>
 			)}
-			{/* <input type="submit" className={classes.Contact__submit} /> */}
-			<Button submit = {true} clicked = {onSubmit}>Submit</Button>
+			<input type="submit" className={classes.Contact__submit} />
 		</form>
 	);
 };
