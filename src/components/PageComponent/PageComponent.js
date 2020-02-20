@@ -3,8 +3,10 @@ import classes from "./PageComponent.module.scss";
 import { withRouter } from "react-router-dom";
 import { pageComponentData } from "../../util/util";
 import Contact from "./Contact/Contact";
+import Resources from "./Resources/Resources";
+import Register from "./Register/Register";
 
-const About = props => {
+const PageComponent = props => {
 	const page = props.match.path.slice(1);
 	let { title, text } = pageComponentData[page];
 	let className =
@@ -22,15 +24,18 @@ const About = props => {
 				</div>
 				<main className={classes.PageComponent__main}>
 					<h1 className={classes.PageComponent__title}>{title}</h1>
-					<div className={classes.PageComponent__text}>
-						{textRendered}
-					</div>
-
+					{page == "about" && (
+						<div className={classes.PageComponent__text}>
+							{textRendered}
+						</div>
+					)}
 					{page === "contact" && <Contact />}
+					{page === "resources" && <Resources />}
+					{page === "register" && <Register />}
 				</main>
 			</div>
 		</Fragment>
 	);
 };
 
-export default withRouter(About);
+export default withRouter(PageComponent);

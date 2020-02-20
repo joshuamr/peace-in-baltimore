@@ -1,55 +1,71 @@
 @import "../../../sass/main";
 .Contact {
 	display: grid;
-    grid-row-gap:4rem;
-    padding: 0rem 4rem 4rem;
-    justify-items: center;
+	grid-row-gap: 4rem;
+	padding: 0rem 4rem 4rem;
+	justify-items: center;
+	margin-top: 2rem;
 
-@media only screen and(min-width: $bp-500) {
-    padding: 2rem 3rem 3rem;
-}
+	@media only screen and(min-width: $bp-500) {
+		padding: 2rem 3rem 3rem;
+	}
 
-    &__input, 
-    &__textarea {
-        display: block;
-        width: 100%;
-        padding: 1rem 1.5rem;
-        border-radius: 5px;
-        border: 1px solid #bbb;
-        font-family: $font-display;
-        font-size: 2rem;
-        box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .1);
-        color: $color-blue;
-        font-weight: bold;
-        &::placeholder{
-            color: rgba($color-blue, .6);
-            font-weight: bold;
-        }
-        // border-style: none;
+	&__input,
+	&__textarea {
+		display: block;
+		width: 100%;
+		padding: 1rem 1.5rem;
+		border-radius: 5px;
+		border: 1px solid #bbb;
+		font-family: $font-display;
+		font-size: 2rem;
+		box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+		color: $color-blue;
+		font-weight: bold;
+		&::-webkit-input-placeholder {
+			color: rgba($color-blue, 0.6);
+			font-weight: bold;
+		}
+		&::-moz-placeholder {
+			color: rgba($color-blue, 0.6);
+			font-weight: bold;
+		}
+		&:-ms-input-placeholder {
+			color: rgba($color-blue, 0.6);
+			font-weight: bold;
+		}
+		&::-ms-input-placeholder {
+			color: rgba($color-blue, 0.6);
+			font-weight: bold;
+		}
+		&::placeholder {
+			color: rgba($color-blue, 0.6);
+			font-weight: bold;
+		}
+		// border-style: none;
 
-        &:focus {
-            outline: none;
-            border: 1px solid $color-blue;
-        }
-        &__error{
-            border: 1px solid red;
-        }
-    }
+		&:focus {
+			outline: none;
+			border: 1px solid $color-blue;
+		}
+		&__error {
+			border: 1px solid red;
+		}
+	}
 
-    &__input {
-        height: 4rem;
-    }
+	&__input {
+		height: 4rem;
+	}
 
-    &__submit {
-       
-        @include button($shadow-long:false);
-    }
+	&__submit {
+		@include button($shadow-long: false);
+	}
 
-    &__err {
-            justify-self: start;
-    color: red;
-    margin-left: 1.5rem;
-    margin-top: -2.5rem;
-    font-size: 2rem;
-    }
+	&__err {
+		justify-self: start;
+		color: red;
+		margin-left: 1.5rem;
+		margin-top: -2.5rem;
+		font-size: 2rem;
+	}
 }

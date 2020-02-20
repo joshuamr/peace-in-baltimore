@@ -1,24 +1,26 @@
 import React from "react";
 import classes from "./Contact.module.scss";
 import { useForm } from "react-hook-form";
-import Button from '../../Button/Button'
 
 const Contact = props => {
 	const { register, handleSubmit, watch, errors } = useForm();
 	const onSubmit = data => {
 		console.log(data);
-	}; 
-	let inputClass = classes.Contact__input
-	let setInputClass = (name) => errors[name] ? inputClass + " " + classes.Contact__input__error : inputClass
+	};
+	let inputClass = classes.Contact__input;
+	let setInputClass = name =>
+		errors[name]
+			? inputClass + " " + classes.Contact__input__error
+			: inputClass;
 	return (
-		<form className={classes.Contact} onSubmit = {handleSubmit(onSubmit)}>
+		<form className={classes.Contact} onSubmit={handleSubmit(onSubmit)}>
 			<input
 				name="name"
 				placeholder="Full Name"
 				ref={register({ required: true })}
 				className={setInputClass("name")}
 			/>
-			{errors.name &&  (
+			{errors.name && (
 				<span className={classes.Contact__err}>
 					Please enter your name.
 				</span>
@@ -57,8 +59,14 @@ const Contact = props => {
 				ref={register({
 					required: true
 				})}
-				className={errors.content ? classes.Contact__textarea + " " + classes.Contact__textarea__error : classes.Contact__textarea}
-				rows = "20"
+				className={
+					errors.content
+						? classes.Contact__textarea +
+						  " " +
+						  classes.Contact__textarea__error
+						: classes.Contact__textarea
+				}
+				rows="20"
 			></textarea>
 			{errors.content && (
 				<span className={classes.Contact__err}>

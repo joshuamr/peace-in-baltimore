@@ -2,10 +2,15 @@ import React from "react";
 import classes from "./cta.module.scss";
 import Lotuses from "./Lotuses/Lotuses";
 import Button from "../../Button/Button";
-import { dataAos } from "../../../util/util";
+import { gotToTop } from "../../../util/util";
+import { withRouter } from "react-router-dom";
 
 const Cta = props => {
 	const submitForm = () => {};
+	const goToRegister = () => {
+		gotToTop();
+		props.history.push("/register");
+	};
 	return (
 		<div className={classes.cta}>
 			<Lotuses />
@@ -36,10 +41,10 @@ const Cta = props => {
 				>
 					Join us!
 				</h3>
-				<Button clicked={submitForm}>Register</Button>
+				<Button clicked={goToRegister}>Register</Button>
 			</div>
 		</div>
 	);
 };
 
-export default Cta;
+export default withRouter(Cta);

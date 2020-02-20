@@ -1,3 +1,7 @@
+import underTheTree from "../assets/images/under-the-tree-640.jpg";
+import riverMeditator from "../assets/images/river-meditator-600.jpg";
+import mountainMeditator from "../assets/images/mountain-meditator-400x253.jpg";
+
 export const links = [
 	{ text: "Meditation", path: "/" },
 	{ text: "Yoga", path: "/yoga" },
@@ -37,3 +41,35 @@ export const pageComponentData = {
 		text: []
 	}
 };
+
+export const gotToTop = () => {
+	var scrollToTop = window.setInterval(function() {
+		var pos = window.pageYOffset;
+		if (pos > 0) {
+			window.scrollTo(0, pos - 20); // how far to scroll on each step
+		} else {
+			window.clearInterval(scrollToTop);
+		}
+	}, 3);
+};
+
+export const testimonials = [
+	{
+		text:
+			"I'm a work in progress. By attending and participating on Sunday mornings with Josh and sharing with the rest of the Sangha, I'm learning to be more present and learning what's really important in life. I love this caring Sangha and I will continue showing up on Sundays!",
+		student: "Diane",
+		image: underTheTree
+	},
+	{
+		text:
+			"Back in 2012, a friend took me to a new class at my local yoga studio. Each class began with a sharing circle, and a meditation or a teaching of a yoga sutra. We shared deeply, and many of us went through huge life changes—from family and friend deaths, marriages, divorces, illnesses, losing jobs, homes, etc. It really bonded the group. Josh is not only an amazing yoga teacher, but he’s also an incredible teacher, facilitator, listener, and friend. I so looked forward to every Sunday morning and the other attendees have grown from acquaintances to dear friends, or as we refer to ourselves, a “tribe.”",
+		student: "Beth",
+		image: riverMeditator
+	},
+	{
+		text:
+			"I started coming to class two years ago, and learning about the sutras--paired with more regular meditation, and the periodic retreats to reinvigorate and deepen my practice--have made a profound difference in my life and given me new learning and tools to work more skillfully with life's challenges. I've found the community to be an open, non-judgmental space for sharing wisdom, connecting, and walking on the journey together.  I have nothing but gratitude.",
+		student: "Michelle",
+		image: mountainMeditator
+	}
+];

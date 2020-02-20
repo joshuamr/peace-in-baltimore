@@ -1,18 +1,9 @@
 import React from "react";
 import classes from "./Footer.module.scss";
 import LinksList from "../LinksList/LinksList";
+import { gotToTop } from "../../util/util";
 
 const Footer = props => {
-	const gotToTop = () => {
-		var scrollToTop = window.setInterval(function() {
-			var pos = window.pageYOffset;
-			if (pos > 0) {
-				window.scrollTo(0, pos - 20); // how far to scroll on each step
-			} else {
-				window.clearInterval(scrollToTop);
-			}
-		}, 3);
-	};
 	return (
 		<footer className={classes.footer}>
 			<LinksList footer={true} clicked={gotToTop} />

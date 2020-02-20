@@ -162,7 +162,7 @@
 		display: flex;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
-		        flex-direction: column;
+		flex-direction: column;
 	}
 
 	@media only screen and(hover: hover) {
@@ -267,15 +267,8 @@
 		cursor: pointer;
 
 		&__text:after {
-			-webkit-transition: all 0.4s;
-			transition: all 0.4s;
-			content: "";
-			-webkit-transform: scaleX(0);
-			transform: scaleX(0);
-			border-bottom: 3px solid $color-blue;
-			display: block;
-			margin: 0.5rem 0;
-			// transform-origin: 0% 50%;
+			// to start at left transform-origin: 0% 50%;
+			@include after-underline;
 		}
 
 		&:hover &__text:after,

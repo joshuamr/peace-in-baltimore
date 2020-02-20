@@ -1,8 +1,7 @@
-.main {
-}
+@import "../../sass/main";
 
 .testimonials {
+	@extend %testimonials-height;
 	position: relative;
-	height: 45vh;
 	margin-bottom: 4rem;
 }

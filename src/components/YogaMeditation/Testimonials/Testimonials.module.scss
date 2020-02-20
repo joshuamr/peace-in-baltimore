@@ -1,14 +1,13 @@
-@import "../../../sass/variables";
-@import "../../../sass/animations";
+@import "../../../sass/main";
 
 .testimonials {
+	@extend %testimonials-height;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(white, 0.8)), to(rgba(white, 0.8))),
 		url("../../../assets/images/sunset-640.jpg");
 	background-image: linear-gradient(rgba(white, 0.8), rgba(white, 0.8)),
 		url("../../../assets/images/sunset-640.jpg");
 	background-size: cover;
 	background-position: 35% 0;
-	height: 45vh;
 	display: grid;
 	-webkit-box-align: center;
 	align-items: center;

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import classes from "./Header.module.scss";
-import MeditationPic from "../../../assets/images/hero1920.jpg"; //'../../../assets/images/hero1920.jpg"';
+import Sparkle from "./Sparkle/Sparkle";
 
 const Header = props => {
 	let classNames = {
@@ -23,11 +23,10 @@ const Header = props => {
 
 	return (
 		<header className={classNames.header}>
-			{/* <img src={MeditationPic} className={classes.header__background} /> */}
 			<h1 className={classNames.heading__1}> Yoga</h1>
 			<h1 className={classNames.heading__2}>Meditation</h1>
 			<h1 className={classes.heading__3}>Baltimore</h1>
-			{props.meditation && <div className={classes.sparkle}></div>}
+			{props.meditation && <Sparkle />}
 		</header>
 	);
 };

@@ -1,0 +1,10 @@
+@import "../../../sass/main";
+
+.Register {
+	@media only screen and(min-width: $bp-1000) {
+		display: -webkit-box;
+		display: flex;
+		-webkit-box-pack: center;
+		justify-content: space-between;
+	}
+}
