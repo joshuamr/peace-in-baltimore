@@ -2,14 +2,12 @@ import React, { useContext, Fragment, useState, useEffect } from "react";
 import classes from "./Modal.module.scss";
 import { toggleNoScroll } from "../../util/util";
 import { ModalContext } from "../../Context/modal-context";
-import LotusPicture from "../../assets/images/Lotus-picture-600.jpg";
 
 const Modal = props => {
 	let modalContext = useContext(ModalContext);
 	let modalOpen = modalContext.modalOpen;
 	let setModalOpen = modalContext.setModalOpen;
 	let { text, title, image } = modalContext.modalComponents;
-	console.log(text);
 	let [backdropClass, setBackdropClass] = useState();
 	let [modalClass, setModalClass] = useState();
 	let background = {

@@ -11,7 +11,6 @@ const Sparkle = props => {
 	let headerHeight = windowHeight * 0.9;
 
 	let viewportRatio = headerWidth / headerHeight;
-	console.log(viewportRatio);
 
 	//640 width x 486 high
 	let pictureRatio = 1.31687;
@@ -35,12 +34,15 @@ const Sparkle = props => {
 		backgroundPosition = 1;
 		bottom = (0.38 * headerWidth) / pictureRatio + "px";
 	}
-
+	let resizer = () => {
+		setWindowWidth(window.innerWidth);
+		setWindowHeight(window.innerHeight);
+	};
 	useEffect(() => {
-		window.addEventListener("resize", () => {
-			setWindowWidth(window.innerWidth);
-			setWindowHeight(window.innerHeight);
-		});
+		window.addEventListener("resize", resizer);
+		return () => {
+			window.removeEventListener("resize", resizer);
+		};
 	}, []);
 
 	return <div className={classes.Sparkle} style={{ bottom, left }}></div>;

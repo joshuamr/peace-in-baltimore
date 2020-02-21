@@ -1,24 +1,6 @@
 @import "../../sass/main";
 
 .PageComponent {
-	// &__about {
-	// 	@include singleComponentBackground(
-	// 		"../assets/images/meditating-baltimore.jpg"
-	// 	);
-	// }
-	// &__resources {
-	// 	@include singleComponentBackground(
-	// 		"../assets/images/flower-meditation-large.jpg"
-	// 	);
-	// }
-	// &__register {
-	// 	@include singleComponentBackground(
-	// 		"../assets/images/river-meditator-600.jpg"
-	// 	);
-	// }
-	// &__contact {
-	// 	@include singleComponentBackground("../assets/images/victory-600.jpg");
-	// }
 	&__main {
 		@media only screen and(min-width: $bp-500) {
 			@include short-box-shadow;
@@ -32,23 +14,6 @@
 			position: relative;
 			border-radius: 5px;
 			margin-bottom: 4rem;
-		}
-
-		// @media only screen and(min-width: $tab-land) {
-		// 	margin: -10rem auto 4rem;
-		// }
-	}
-
-	&__text {
-		padding: 2rem 6rem 3rem;
-		@media only screen and(min-width: $bp-500) {
-			padding: 2rem 0 0;
-		}
-		&_p {
-			color: $color-blue;
-			font-size: 2.5rem;
-			margin-bottom: 2rem;
-			font-weight: bold;
 		}
 	}
 	&__title {
@@ -66,7 +31,7 @@
 		box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.8);
 
 		&_pic {
-			&__about {
+			&__About {
 				@include singleComponentImage(
 					"../assets/images/meditating-baltimore.jpg"
 				);
@@ -81,13 +46,13 @@
 				}
 			}
 
-			&__register {
+			&__Register {
 				@include singleComponentImage(
 					"../assets/images/Lotus-picture-2000.jpg"
 				);
 				background-position: 53% 28%;
 			}
-			&__resources {
+			&__Resources {
 				@include singleComponentImage(
 					"../assets/images/rocks-balance-1920.jpg"
 				);
@@ -98,7 +63,7 @@
 					background-position: 0 15%;
 				}
 			}
-			&__contact {
+			&__Contact {
 				@include singleComponentImage(
 					"../assets/images/morning-prayer-large.jpg"
 				);

@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import classes from "./Feature.module.scss";
 import { ModalContext } from "../../../../Context/modal-context.js";
-import Modal from "../../../Modal/Modal";
-import { dataAos } from "../../../../util/util";
 
 const Feature = props => {
 	let modalContext = useContext(ModalContext);

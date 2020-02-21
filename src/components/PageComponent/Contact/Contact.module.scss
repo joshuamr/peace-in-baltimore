@@ -68,4 +68,6 @@
 		margin-top: -2.5rem;
 		font-size: 2rem;
 	}
+
+	@include zoomAnimation;
 }

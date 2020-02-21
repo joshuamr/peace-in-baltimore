@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import Testimonial from "./Testimonial/Testimonial";
 import classes from "./Testimonials.module.scss";
 import { testimonials } from "../../../util/util";

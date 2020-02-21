@@ -40,26 +40,16 @@
 	&__link {
 		&:link,
 		&:visited {
-			display: block;
-			text-decoration: none;
-			font-size: 3rem;
-			color: $color-orange;
-			font-weight: bold;
-			@media only screen and(min-width: $bp-500) {
-				font-size: 2.2rem;
-			}
-			@media only screen and(min-width: $bp-700) {
-				font-size: 2.6rem;
-			}
-			@media only screen and(min-width: $bp-850) {
-				font-size: 3rem;
-			}
-			&:hover {
-				@include hover-shift;
-			}
-			&:active {
-				color: $color-dark;
-			}
+			@include link;
 		}
+		&__YC {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__YC {
+		height: 60vh;
+		width: 90%;
+		margin-bottom: 5rem;
 	}
 }
