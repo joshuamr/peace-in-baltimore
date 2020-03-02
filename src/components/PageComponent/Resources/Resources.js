@@ -20,8 +20,8 @@ const Resources = props => {
 						allow="autoplay; encrypted-media"
 						allowFullScreen
 						title="video"
-						height="100%"
 						width="100%"
+						height="100%"
 					/>
 				</div>
 			</div>
@@ -38,11 +38,14 @@ const Resources = props => {
 				>
 					Our Yoga Sutra Interpretations
 				</a>
-				<iframe
-					src="https://docs.google.com/document/d/e/2PACX-1vSVb2T5fwj04cqMzeFt_7yXminR6bO6S3Jx2uU6SvT_uUNA9vZ_Bz-zkG707siYOfn7O7q4B-vj6x-K/pub?embedded=true"
-					height="100%"
-					width="100%"
-				></iframe>
+				<div className={classes.Resources__google_doc}>
+					<iframe
+						src="https://docs.google.com/document/d/e/2PACX-1vSVb2T5fwj04cqMzeFt_7yXminR6bO6S3Jx2uU6SvT_uUNA9vZ_Bz-zkG707siYOfn7O7q4B-vj6x-K/pub?embedded=true"
+						height="100%"
+						width="100%"
+						title="Yoga Sutras"
+					></iframe>
+				</div>
 			</div>
 			<a
 				href="https://swamij.com/yoga-sutras.htm"

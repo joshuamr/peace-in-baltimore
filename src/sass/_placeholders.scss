@@ -30,3 +30,134 @@
 	-webkit-animation: appear 0.8s;
 	animation: appear 0.8s;
 }
+
+%clip-path-pointdown {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+	clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+}
+
+%clip-path-top-pointup {
+	-webkit-clip-path: polygon(
+		0 calc(100vh * 0.225),
+		50% 0,
+		100% calc(100vh * 0.225),
+		100% 100%,
+		0 100%
+	);
+	clip-path: polygon(
+		0 calc(100vh * 0.225),
+		50% 0,
+		100% calc(100vh * 0.225),
+		100% 100%,
+		0 100%
+	);
+}
+
+%clip-path-bottom-pointdown {
+	-webkit-clip-path: polygon(
+		0 0,
+		0 100%,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 100vh * 0.225),
+		50% 100%,
+		0 calc(100% - 100vh * 0.225)
+	);
+}
+
+%clip-path-top-pointdown {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 100%,
+		0 100%
+	);
+	clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
+}
+
+%clip-path-hex {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 100%,
+		0 100%
+	);
+	clip-path: polygon(0 0, 50% calc(100vh * 0.225), 100% 0, 100% 100%, 0 100%);
+}
+
+%input {
+	font-family: $font-display;
+	font-size: 1.8rem;
+	height: 4rem;
+	width: 90%;
+	padding: 0.5rem 1rem;
+	margin: 1rem 0;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.5);
+	@media only screen and(min-width: $tab-port) {
+		margin: 1rem 5% 1rem 0;
+	}
+}
+
+%clip-path-border {
+	-webkit-clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 10px,
+		50% calc(100vh * 0.225 + 10px),
+		0 10px
+	);
+	clip-path: polygon(
+		0 0,
+		50% calc(100vh * 0.225),
+		100% 0,
+		100% 10px,
+		50% calc(100vh * 0.225 + 10px),
+		0 10px
+	);
+	margin-top: calc(-1 * 100vh * 0.225);
+	background-color: white;
+	width: 100%;
+	height: calc(100vh * 0.225 + 10px);
+}
+
+%line {
+	width: 3rem;
+	height: 0.2rem;
+	background-color: white;
+}
+
+%navbox {
+	height: 2.598rem;
+	width: 3rem;
+}
+
+%absolute-center {
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}

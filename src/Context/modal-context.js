@@ -13,8 +13,13 @@ export default props => {
 	let [modalComponents, setModalComponents] = useState({
 		text: "",
 		title: "",
-		image: ""
+		image: "",
+		component: "",
+		price: 0,
+		classType: "",
+		passType: ""
 	});
+	let checkProblem = () => {};
 	return (
 		<ModalContext.Provider
 			value={{

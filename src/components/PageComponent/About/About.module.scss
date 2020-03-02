@@ -1,6 +1,9 @@
 @import "../../../sass/main";
 .About {
-	margin: 3rem 0;
+	padding: 3rem;
+	@media only screen and(min-width: $bp-500) {
+		padding: 3rem 0;
+	}
 	&__text {
 		padding: 2rem 6rem 3rem;
 		@media only screen and(min-width: $bp-500) {

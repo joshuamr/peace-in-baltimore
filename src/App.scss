@@ -1,5 +1,4 @@
-@import "./sass/variables";
-@import "./sass/animations";
+@import "./sass/main";
 
 *,
 *::after,
@@ -15,17 +14,6 @@ html {
 	@media only screen and(min-width: $bp-500) {
 		font-size: 62.5%;
 	}
-	// @include respond(tab-land) {
-	// 	font-size: 56.25%; //1rem=9px
-	// }
-
-	// @include respond(tab-port) {
-	// 	font-size: 50%; //1rem=8px
-	// }
-
-	// @include respond(big-desktop) {
-	// 	font-size: 75%; //1rem=12px
-	// }
 }
 
 body {
@@ -36,7 +24,7 @@ body {
 		padding: 3rem;
 	}
 	@media only screen and(min-width: $tab-land) {
-		max-width: 95%
+		max-width: 95%;
 	}
 	// max-width: 120rem;
 	margin: 0 auto;

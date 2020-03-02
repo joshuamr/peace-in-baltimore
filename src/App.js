@@ -26,8 +26,8 @@ function App() {
 					<Route path="/" component={YogaMeditation} />
 				</Switch>
 				<Modal />
+				<Cta />
 			</ModalContextProvider>
-			<Cta />
 			<Footer />
 		</BrowserRouter>
 	);

@@ -1,10 +1,12 @@
 @import "../../sass/main";
 
+$marginTop: calc(-1 * (100vh * 0.225) - 4rem);
+
 .footer {
 	@extend %clip-path-top-pointdown;
 	width: 100%;
 	background-color: $color-dark;
-	margin-top: calc(-1 * (100vh * 0.225) - 3rem);
+	margin-top: calc(-1 * (100vh * 0.225));
 	font-size: 2.3rem;
 
 	padding: calc(100vh * 0.225 + 5rem) 3rem 3rem;
@@ -14,5 +16,10 @@
 		font-size: 1rem;
 		margin: 10rem auto 1rem;
 		text-align: center;
+	}
+
+	&__border {
+		@extend %clip-path-border;
+		margin-top: $marginTop;
 	}
 }

@@ -2,11 +2,16 @@
 .Contact {
 	display: grid;
 	grid-row-gap: 4rem;
-	padding: 0rem 4rem 4rem;
+	padding: 0rem 3rem 4rem;
 	justify-items: center;
 	margin-top: 2rem;
-
+	@media only screen and(min-width: $bp-400) {
+		padding: 0rem 4rem 4rem;
+	}
 	@media only screen and(min-width: $bp-500) {
+		padding: 2rem 1rem 3rem;
+	}
+	@media only screen and(min-width: $bp-700) {
 		padding: 2rem 3rem 3rem;
 	}
 
@@ -22,6 +27,12 @@
 		box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
 		color: $color-blue;
 		font-weight: bold;
+		@media only screen and(min-width: $bp-500) {
+			font-size: 1.6rem;
+		}
+		@media only screen and(min-width: $phone) {
+			font-size: 2rem;
+		}
 		&::-webkit-input-placeholder {
 			color: rgba($color-blue, 0.6);
 			font-weight: bold;
@@ -60,14 +71,7 @@
 	&__submit {
 		@include button($shadow-long: false);
 	}
-
-	&__err {
-		justify-self: start;
-		color: red;
-		margin-left: 1.5rem;
-		margin-top: -2.5rem;
-		font-size: 2rem;
-	}
+	@include formError;
 
 	@include zoomAnimation;
 }

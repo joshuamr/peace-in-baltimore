@@ -3,7 +3,7 @@ import riverMeditator from "../assets/images/river-meditator-600.jpg";
 import mountainMeditator from "../assets/images/mountain-meditator-400x253.jpg";
 
 export const links = [
-	{ text: "Meditation", path: "/" },
+	{ text: "Home", path: "/" },
 	{ text: "Yoga", path: "/Yoga" },
 	{ text: "About", path: "/About" },
 	{ text: "Register", path: "/Register" },
@@ -39,7 +39,7 @@ export const gotToTop = () => {
 export const testimonials = [
 	{
 		text:
-			"By attending and participating on Sunday mornings with Josh and sharing with the rest of the Sangha, I'm learning to be more present and learning what's really important in life. I love this caring Sangha and I will continue showing up on Sundays!",
+			"By attending and participating on Sunday mornings with Josh and sharing with the rest of the community, I'm learning to be more present and learning what's really important in life. I love this caring community and I will continue showing up on Sundays!",
 		student: "Diane",
 		image: underTheTree
 	},
@@ -56,3 +56,13 @@ export const testimonials = [
 		image: mountainMeditator
 	}
 ];
+
+export const sendEmail = data => {
+	return fetch(
+		"https://c7r4fst02d.execute-api.us-east-1.amazonaws.com/dev/contact",
+		{
+			method: "POST",
+			body: JSON.stringify(data)
+		}
+	);
+};

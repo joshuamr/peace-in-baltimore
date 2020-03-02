@@ -2,43 +2,47 @@ import React, { useState, Fragment } from "react";
 import classes from "./Contact.module.scss";
 import { useForm } from "react-hook-form";
 import Submitted from "./Submitted/Submitted";
+import { sendEmail } from "../../../util/util";
 
 const Contact = props => {
 	let [formData, setFormData] = useState({});
 	let [emailStatus, setEmailStatus] = useState("drafting");
 	const { register, handleSubmit, errors } = useForm();
-	const onSubmit = data => {
+	const handleError = err => {
+		console.log(err);
+		window.scrollTo(0, 0);
+		setEmailStatus("error");
+	};
+	const onSubmit = async data => {
+		setEmailStatus("submit");
 		setFormData(data);
 		setClassName(classes.Contact + " " + classes.Contact__zoomOutUp);
-		setTimeout(() => {
-			setEmailStatus("sent");
-		}, 1000);
-		// fetch(
-		// 	"https://c7r4fst02d.execute-api.us-east-1.amazonaws.com/dev/contact",
-		// 	{
-		// 		method: "POST",
-		// 		body: JSON.stringify(data)
-		// 	}
-		// )
-		// 	.then(res => {
-		// 		if (res.status === 200) {
-		// 			setClassName(
-		// 				classes.Contact + " " + classes.Contact__zoomOutUp
-		// 			);
-		// 			setTimeout(() => {
-		// 				setEmailStatus("sent");
-		// 			}, 1000);
-		// 		}
-		// 	})
-		// 	.catch(err => {
-		// 		setEmailStatus("error");
-		// 	});
+		try {
+			let res = await sendEmail(data);
+			console.log(res);
+			if (res.status === 200) {
+				setClassName(
+					classes.Contact + " " + classes.Contact__zoomOutUp
+				);
+				window.scrollTo(0, 300);
+				setTimeout(() => {
+					setEmailStatus("sent");
+				}, 500);
+			} else {
+				handleError(res);
+			}
+		} catch (err) {
+			handleError(err);
+		}
 	};
-	let inputClass = classes.Contact__input;
-	let setInputClass = name =>
-		errors[name]
-			? inputClass + " " + classes.Contact__input__error
-			: inputClass;
+	let setInputClass = (name, type = "input") => {
+		let baseClass = "Contact__" + type;
+		let inputClassName = classes[baseClass];
+		if (errors[name])
+			inputClassName =
+				inputClassName + " " + classes[baseClass + "__error"];
+		return inputClassName;
+	};
 	let [className, setClassName] = useState(classes.Contact);
 	const restart = data => {
 		if (emailStatus === "error") {
@@ -51,14 +55,14 @@ const Contact = props => {
 	};
 	return (
 		<Fragment>
-			{emailStatus !== "drafting" && (
+			{(emailStatus === "sent" || emailStatus === "error") && (
 				<Submitted
 					data={formData}
 					restart={restart}
 					emailStatus={emailStatus}
 				/>
 			)}
-			{emailStatus === "drafting" && (
+			{(emailStatus === "drafting" || emailStatus === "submit") && (
 				<form className={className} onSubmit={handleSubmit(onSubmit)}>
 					<input
 						name="name"
@@ -108,22 +112,20 @@ const Contact = props => {
 						ref={register({
 							required: true
 						})}
-						className={
-							errors.content
-								? classes.Contact__textarea +
-								  " " +
-								  classes.Contact__textarea__error
-								: classes.Contact__textarea
-						}
+						className={setInputClass("body", "textarea")}
 						rows="20"
 						defaultValue={formData.body}
 					></textarea>
-					{errors.content && (
+					{errors.body && (
 						<span className={classes.Contact__err}>
 							Please write a message.
 						</span>
 					)}
-					<input type="submit" className={classes.Contact__submit} />
+					<input
+						type="submit"
+						className={classes.Contact__submit}
+						disabled={emailStatus === "submit"}
+					/>
 				</form>
 			)}
 		</Fragment>

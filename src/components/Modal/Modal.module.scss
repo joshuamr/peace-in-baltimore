@@ -12,20 +12,17 @@
 	transition: top 0.4s;
 
 	&__closed {
-		top: -100%;
+		top: -150%;
 	}
 }
 
 .modal {
+	@extend %absolute-center;
 	z-index: 200;
 	position: fixed;
-	top: 50%;
-	left: 50%;
 	max-width: 60rem;
 	width: 80%;
 	border-radius: 5px;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
 	background-color: white;
 	box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
 	-webkit-transition: top 0.4s;
@@ -76,6 +73,10 @@
 		@media only screen and(min-width: $bp-500) {
 			font-size: 5rem;
 			background-position: 0 37%;
+
+			&__cta {
+				background-position: 0 47%;
+			}
 		}
 	}
 

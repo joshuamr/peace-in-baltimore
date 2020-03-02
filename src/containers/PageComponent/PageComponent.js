@@ -8,7 +8,10 @@ import About from "../../components/PageComponent/About/About";
 
 const PageComponent = props => {
 	const page = props.match.path.slice(1);
-	let className =
+	let mainClassName = classes.PageComponent__main;
+	if (page === "Contact")
+		mainClassName += " " + classes.PageComponent__main__Contact;
+	let imageClassName =
 		classes.PageComponent__image_pic +
 		" " +
 		classes["PageComponent__image_pic__" + page];
@@ -16,9 +19,9 @@ const PageComponent = props => {
 		<Fragment>
 			<div className={classes.PageComponent}>
 				<div className={classes.PageComponent__image}>
-					<div className={className} />
+					<div className={imageClassName} />
 				</div>
-				<main className={classes.PageComponent__main}>
+				<main className={mainClassName}>
 					<h1 className={classes.PageComponent__title}>{page}</h1>
 					<Switch>
 						<Route path="/About" component={About} />

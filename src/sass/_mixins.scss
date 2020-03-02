@@ -67,6 +67,10 @@
 	cursor: pointer;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
+	&:disabled {
+		background-color: $color-gray;
+		cursor: wait;
+	}
 
 	@if $shadow-long {
 		box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.8);
@@ -74,15 +78,16 @@
 		box-shadow: 0 0.2rem 0.4rem rgba($color: #000000, $alpha: 0.8);
 	}
 
-	&:hover {
+	&:hover:enabled {
 		-webkit-transform: translateY(-0.5rem);
 		transform: translateY(-0.5rem);
 		box-shadow: 0 0.8rem 1.6rem rgba($color: #000000, $alpha: 0.8);
 	}
-	&:active {
+	&:active:enabled {
 		-webkit-transform: translateY(-0.3rem);
 		transform: translateY(-0.3rem);
 		box-shadow: 0 0.3rem 0.6rem rgba($color: #000000, $alpha: 0.8);
+		background-color: $color-dark;
 	}
 
 	&:focus {
@@ -147,11 +152,21 @@
 
 @mixin zoomAnimation {
 	&__zoomInDown {
-		-webkit-animation: zoomInDown 1s;
-		animation: zoomInDown 1s;
+		-webkit-animation: zoomInDown 0.5s forwards;
+		animation: zoomInDown 0.5s forwards;
 	}
 	&__zoomOutUp {
-		-webkit-animation: zoomOutUp 1s;
-		animation: zoomOutUp 1s;
+		-webkit-animation: zoomOutUp 0.5s forwards;
+		animation: zoomOutUp 0.5s forwards;
+	}
+}
+
+@mixin formError {
+	&__err {
+		justify-self: start;
+		color: red;
+		margin-left: 1.5rem;
+		margin-top: -2.5rem;
+		font-size: 2rem;
 	}
 }

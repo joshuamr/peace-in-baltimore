@@ -6,7 +6,6 @@ const Feature = props => {
 	let modalContext = useContext(ModalContext);
 	let { setModalOpen, setModalComponents } = modalContext;
 	let openModal = () => {
-		console.log(props.modalText);
 		setModalComponents({
 			title: props.title,
 			text: props.modalText,

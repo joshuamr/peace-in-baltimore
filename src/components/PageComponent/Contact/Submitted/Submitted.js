@@ -34,9 +34,10 @@ const Submitted = props => {
 	);
 	let restart = () => {
 		setClassName(classes.Submitted + " " + classes.Submitted__zoomOutUp);
+		window.scrollTo(0, 300);
 		setTimeout(() => {
 			props.restart(props.data);
-		}, 1000);
+		}, 500);
 	};
 	let title = messageSent ? "Message Sent" : "Error Sending Message";
 	let restartMessage = messageSent ? "Send another message" : "Try again";
